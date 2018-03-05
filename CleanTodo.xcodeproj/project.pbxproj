@@ -11,6 +11,13 @@
 		A4D6DB8C204D6B6E00B6D188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */; };
 		A4D6DB8E204D6B6E00B6D188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */; };
 		A4D6DB91204D6B6E00B6D188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8F204D6B6E00B6D188 /* LaunchScreen.storyboard */; };
+		A4D6DBA3204D6C4F00B6D188 /* ListTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */; };
+		A4D6DBA4204D6C4F00B6D188 /* ListTasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */; };
+		A4D6DBA5204D6C4F00B6D188 /* ListTasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */; };
+		A4D6DBA6204D6C4F00B6D188 /* ListTasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */; };
+		A4D6DBA7204D6C4F00B6D188 /* ListTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */; };
+		A4D6DBA8204D6C4F00B6D188 /* ListTasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA2204D6C4F00B6D188 /* ListTasksWorker.swift */; };
+		A4D6DBAA204D74F700B6D188 /* ListTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */; };
 		FC683CCB68D7D771258D7C85 /* Pods_CleanTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +29,13 @@
 		A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4D6DB90204D6B6E00B6D188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D6DB92204D6B6E00B6D188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksInteractor.swift; sourceTree = "<group>"; };
+		A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksModels.swift; sourceTree = "<group>"; };
+		A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenter.swift; sourceTree = "<group>"; };
+		A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksRouter.swift; sourceTree = "<group>"; };
+		A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksViewController.swift; sourceTree = "<group>"; };
+		A4D6DBA2204D6C4F00B6D188 /* ListTasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksWorker.swift; sourceTree = "<group>"; };
+		A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksTableViewCell.swift; sourceTree = "<group>"; };
 		DF0AFCD8989352140EF28628 /* Pods-CleanTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo.release.xcconfig"; sourceTree = "<group>"; };
 		F470A65931C94DA51CD9AFD2 /* Pods-CleanTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */,
+				A4D6DB9C204D6C2900B6D188 /* List Tasks */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,6 +121,20 @@
 				A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A4D6DB9C204D6C2900B6D188 /* List Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */,
+				A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */,
+				A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */,
+				A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */,
+				A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */,
+				A4D6DBA2204D6C4F00B6D188 /* ListTasksWorker.swift */,
+				A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */,
+			);
+			path = "List Tasks";
 			sourceTree = "<group>";
 		};
 		E630B8F935E480F2804FB43E /* Pods */ = {
@@ -244,6 +273,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4D6DB87204D6B6D00B6D188 /* AppDelegate.swift in Sources */,
+				A4D6DBA8204D6C4F00B6D188 /* ListTasksWorker.swift in Sources */,
+				A4D6DBA5204D6C4F00B6D188 /* ListTasksPresenter.swift in Sources */,
+				A4D6DBA4204D6C4F00B6D188 /* ListTasksModels.swift in Sources */,
+				A4D6DBAA204D74F700B6D188 /* ListTasksTableViewCell.swift in Sources */,
+				A4D6DBA7204D6C4F00B6D188 /* ListTasksViewController.swift in Sources */,
+				A4D6DBA6204D6C4F00B6D188 /* ListTasksRouter.swift in Sources */,
+				A4D6DBA3204D6C4F00B6D188 /* ListTasksInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -368,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -383,7 +419,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = CleanTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,7 +436,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = CleanTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
