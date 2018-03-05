@@ -22,9 +22,8 @@ protocol ListTasksDataStore {
 }
 
 class ListTasksInteractor: ListTasksBusinessLogic, ListTasksDataStore {
-  var worker: ListTasksWorker?
+  var worker: ListTasksWorker? = ListTasksWorker()
   var presenter: ListTasksPresentationLogic?
-  
   var tasks: [String]?
 
   // MARK: Fetch Data From DataStore
@@ -38,10 +37,9 @@ class ListTasksInteractor: ListTasksBusinessLogic, ListTasksDataStore {
   // MARK: Use Case - Select Task
   
   func selectTask(with request: ListTasksModels.SelectTask.Request) {
-    guard let task = request.task, let _ = tasks else { return }
-    
-    let index = tasks?.index(of: task)
-    tasks?.remove(at: index ?? 0)
+    guard let task = request.task, let tasksList = tasks else { return }
+
+    tasks = worker?.removeTask(task, from: tasksList)
     
     let response = ListTasksModels.SelectTask.Response(tasks: tasks!)
     presenter?.presentSelectTaskResult(with: response)
