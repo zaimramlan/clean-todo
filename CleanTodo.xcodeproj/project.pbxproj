@@ -7,26 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A41E3477204D8CB700B00357 /* CleanTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E3476204D8CB700B00357 /* CleanTodoTests.swift */; };
+		A45A2569204D93D4001DFC4A /* ListTasksInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */; };
+		A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */; };
+		A45A256B204D93D4001DFC4A /* ListTasksViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2567204D93D4001DFC4A /* ListTasksViewControllerTests.swift */; };
+		A45A256E204DA193001DFC4A /* ListTasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256D204DA193001DFC4A /* ListTasksWorker.swift */; };
+		A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256F204DA7AF001DFC4A /* Seeds.swift */; };
 		A4D6DB87204D6B6D00B6D188 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */; };
 		A4D6DB8C204D6B6E00B6D188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */; };
 		A4D6DB8E204D6B6E00B6D188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */; };
 		A4D6DB91204D6B6E00B6D188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8F204D6B6E00B6D188 /* LaunchScreen.storyboard */; };
+		A4D6DBA3204D6C4F00B6D188 /* ListTasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */; };
+		A4D6DBA4204D6C4F00B6D188 /* ListTasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */; };
+		A4D6DBA5204D6C4F00B6D188 /* ListTasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */; };
+		A4D6DBA6204D6C4F00B6D188 /* ListTasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */; };
+		A4D6DBA7204D6C4F00B6D188 /* ListTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */; };
+		A4D6DBAA204D74F700B6D188 /* ListTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */; };
 		FC683CCB68D7D771258D7C85 /* Pods_CleanTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A41E3479204D8CB700B00357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4D6DB7B204D6B6D00B6D188 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4D6DB82204D6B6D00B6D188;
+			remoteInfo = CleanTodo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41E3476204D8CB700B00357 /* CleanTodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTodoTests.swift; sourceTree = "<group>"; };
+		A41E3478204D8CB700B00357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksInteractorTests.swift; sourceTree = "<group>"; };
+		A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenterTests.swift; sourceTree = "<group>"; };
+		A45A2567204D93D4001DFC4A /* ListTasksViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksViewControllerTests.swift; sourceTree = "<group>"; };
+		A45A256D204DA193001DFC4A /* ListTasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksWorker.swift; sourceTree = "<group>"; };
+		A45A256F204DA7AF001DFC4A /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		A4D6DB83204D6B6D00B6D188 /* CleanTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D6DB8B204D6B6E00B6D188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4D6DB90204D6B6E00B6D188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D6DB92204D6B6E00B6D188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksInteractor.swift; sourceTree = "<group>"; };
+		A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksModels.swift; sourceTree = "<group>"; };
+		A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenter.swift; sourceTree = "<group>"; };
+		A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksRouter.swift; sourceTree = "<group>"; };
+		A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksViewController.swift; sourceTree = "<group>"; };
+		A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksTableViewCell.swift; sourceTree = "<group>"; };
 		DF0AFCD8989352140EF28628 /* Pods-CleanTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo.release.xcconfig"; sourceTree = "<group>"; };
 		F470A65931C94DA51CD9AFD2 /* Pods-CleanTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A41E3471204D8CB700B00357 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4D6DB80204D6B6D00B6D188 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,10 +89,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A41E3475204D8CB700B00357 /* CleanTodoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A41E347E204D8CDA00B00357 /* Main */,
+				A45A256F204DA7AF001DFC4A /* Seeds.swift */,
+				A41E3476204D8CB700B00357 /* CleanTodoTests.swift */,
+				A41E3478204D8CB700B00357 /* Info.plist */,
+			);
+			path = CleanTodoTests;
+			sourceTree = "<group>";
+		};
+		A41E347E204D8CDA00B00357 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A41E347F204D8CDF00B00357 /* List Tasks */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A41E347F204D8CDF00B00357 /* List Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */,
+				A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */,
+				A45A2567204D93D4001DFC4A /* ListTasksViewControllerTests.swift */,
+			);
+			path = "List Tasks";
+			sourceTree = "<group>";
+		};
 		A4D6DB7A204D6B6D00B6D188 = {
 			isa = PBXGroup;
 			children = (
 				A4D6DB85204D6B6D00B6D188 /* CleanTodo */,
+				A41E3475204D8CB700B00357 /* CleanTodoTests */,
 				A4D6DB84204D6B6D00B6D188 /* Products */,
 				E630B8F935E480F2804FB43E /* Pods */,
 				9C2BA177C6F6E94A0E96730C /* Frameworks */,
@@ -60,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D6DB83204D6B6D00B6D188 /* CleanTodo.app */,
+				A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */,
+				A4D6DB9C204D6C2900B6D188 /* List Tasks */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,6 +181,20 @@
 				A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A4D6DB9C204D6C2900B6D188 /* List Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6DB9D204D6C4F00B6D188 /* ListTasksInteractor.swift */,
+				A4D6DB9E204D6C4F00B6D188 /* ListTasksModels.swift */,
+				A4D6DB9F204D6C4F00B6D188 /* ListTasksPresenter.swift */,
+				A4D6DBA0204D6C4F00B6D188 /* ListTasksRouter.swift */,
+				A4D6DBA1204D6C4F00B6D188 /* ListTasksViewController.swift */,
+				A4D6DBA9204D74F700B6D188 /* ListTasksTableViewCell.swift */,
+				A45A256D204DA193001DFC4A /* ListTasksWorker.swift */,
+			);
+			path = "List Tasks";
 			sourceTree = "<group>";
 		};
 		E630B8F935E480F2804FB43E /* Pods */ = {
@@ -120,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A41E3473204D8CB700B00357 /* CleanTodoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A41E347B204D8CB700B00357 /* Build configuration list for PBXNativeTarget "CleanTodoTests" */;
+			buildPhases = (
+				A41E3470204D8CB700B00357 /* Sources */,
+				A41E3471204D8CB700B00357 /* Frameworks */,
+				A41E3472204D8CB700B00357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A41E347A204D8CB700B00357 /* PBXTargetDependency */,
+			);
+			name = CleanTodoTests;
+			productName = CleanTodoTests;
+			productReference = A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A4D6DB82204D6B6D00B6D188 /* CleanTodo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4D6DB95204D6B6E00B6D188 /* Build configuration list for PBXNativeTarget "CleanTodo" */;
@@ -150,6 +257,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = zaimramlan;
 				TargetAttributes = {
+					A41E3473204D8CB700B00357 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A4D6DB82204D6B6D00B6D188;
+					};
 					A4D6DB82204D6B6D00B6D188 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -170,11 +282,19 @@
 			projectRoot = "";
 			targets = (
 				A4D6DB82204D6B6D00B6D188 /* CleanTodo */,
+				A41E3473204D8CB700B00357 /* CleanTodoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A41E3472204D8CB700B00357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4D6DB81204D6B6D00B6D188 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,15 +359,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A41E3470204D8CB700B00357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A41E3477204D8CB700B00357 /* CleanTodoTests.swift in Sources */,
+				A45A256B204D93D4001DFC4A /* ListTasksViewControllerTests.swift in Sources */,
+				A45A2569204D93D4001DFC4A /* ListTasksInteractorTests.swift in Sources */,
+				A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */,
+				A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4D6DB7F204D6B6D00B6D188 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A4D6DB87204D6B6D00B6D188 /* AppDelegate.swift in Sources */,
+				A4D6DBA5204D6C4F00B6D188 /* ListTasksPresenter.swift in Sources */,
+				A4D6DBA4204D6C4F00B6D188 /* ListTasksModels.swift in Sources */,
+				A4D6DBAA204D74F700B6D188 /* ListTasksTableViewCell.swift in Sources */,
+				A45A256E204DA193001DFC4A /* ListTasksWorker.swift in Sources */,
+				A4D6DBA7204D6C4F00B6D188 /* ListTasksViewController.swift in Sources */,
+				A4D6DBA6204D6C4F00B6D188 /* ListTasksRouter.swift in Sources */,
+				A4D6DBA3204D6C4F00B6D188 /* ListTasksInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A41E347A204D8CB700B00357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4D6DB82204D6B6D00B6D188 /* CleanTodo */;
+			targetProxy = A41E3479204D8CB700B00357 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */ = {
@@ -269,6 +416,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A41E347C204D8CB700B00357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CT63RCWV2C;
+				INFOPLIST_FILE = CleanTodoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTodo.app/CleanTodo";
+			};
+			name = Debug;
+		};
+		A41E347D204D8CB700B00357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CT63RCWV2C;
+				INFOPLIST_FILE = CleanTodoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanTodo.app/CleanTodo";
+			};
+			name = Release;
+		};
 		A4D6DB93204D6B6E00B6D188 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -368,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -383,7 +564,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = CleanTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,7 +581,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = CleanTodo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +594,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A41E347B204D8CB700B00357 /* Build configuration list for PBXNativeTarget "CleanTodoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A41E347C204D8CB700B00357 /* Debug */,
+				A41E347D204D8CB700B00357 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A4D6DB7E204D6B6D00B6D188 /* Build configuration list for PBXProject "CleanTodo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
