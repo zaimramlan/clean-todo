@@ -57,11 +57,11 @@ class ListTasksViewController: UIViewController, ListTasksDisplayLogic {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    setupFetchFromDataStore()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    setupFetchFromDataStore()
   }
   
   // MARK: TableView
