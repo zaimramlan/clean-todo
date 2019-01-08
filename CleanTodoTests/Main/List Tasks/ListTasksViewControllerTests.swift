@@ -38,7 +38,7 @@ class ListTasksViewControllerTests: XCTestCase {
   func setupListTasksViewController() {
     let bundle = Bundle.main
     let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateViewController(withIdentifier: "ListTasksViewController") as! ListTasksViewController
+    sut = storyboard.instantiateViewController(withIdentifier: "ListTasksViewController") as? ListTasksViewController
   }
   
   func loadView() {

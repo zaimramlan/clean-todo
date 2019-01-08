@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file
 
+=======
+## 1.1.0
+
+- Update to Swift 4
+- Update to Project Settings
+
 ## 1.0.0
 
 - Configured the project's initial setup
