@@ -124,6 +124,14 @@
 			path = "List Tasks";
 			sourceTree = "<group>";
 		};
+		A4B5FBC921E832320090DFD9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A4D6DB98204D6BAD00B6D188 /* Support */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		A4D6DB7A204D6B6D00B6D188 = {
 			isa = PBXGroup;
 			children = (
@@ -147,20 +155,19 @@
 		A4D6DB85204D6B6D00B6D188 /* CleanTodo */ = {
 			isa = PBXGroup;
 			children = (
-				A4D6DB98204D6BAD00B6D188 /* Supporting Files */,
-				A4D6DB9B204D6BE200B6D188 /* Common */,
+				A4B5FBC921E832320090DFD9 /* Shared */,
 				A4D6DB99204D6BB600B6D188 /* Modules */,
 			);
 			path = CleanTodo;
 			sourceTree = "<group>";
 		};
-		A4D6DB98204D6BAD00B6D188 /* Supporting Files */ = {
+		A4D6DB98204D6BAD00B6D188 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */,
 				A4D6DB92204D6B6E00B6D188 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = Support;
 			sourceTree = "<group>";
 		};
 		A4D6DB99204D6BB600B6D188 /* Modules */ = {
@@ -174,19 +181,12 @@
 		A4D6DB9A204D6BC300B6D188 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A4D6DB8F204D6B6E00B6D188 /* LaunchScreen.storyboard */,
 				A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */,
+				A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */,
 				A4D6DB9C204D6C2900B6D188 /* List Tasks */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		A4D6DB9B204D6BE200B6D188 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				A4D6DB8F204D6B6E00B6D188 /* LaunchScreen.storyboard */,
-				A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		A4D6DB9C204D6C2900B6D188 /* List Tasks */ = {
