@@ -14,135 +14,135 @@
 import XCTest
 
 class ListTasksInteractorTests: XCTestCase {
-  
-  // MARK: - Subject Under Test (SUT)
-  
-  var sut: ListTasksInteractor!
-  
-  // MARK: - Test Lifecycle
-  
-  override func setUp() {
-    super.setUp()
-    setupListTasksInteractor()
-  }
-  
-  override func tearDown() {
-    super.tearDown()
-  }
-  
-  // MARK: - Test Setup
-  
-  func setupListTasksInteractor() {
-    sut = ListTasksInteractor()
-  }
-  
-  // MARK: - Test Doubles
-  
-  class ListTasksWorkerSpy: ListTasksWorker {
     
-    // Expectations
+    // MARK: - Subject Under Test (SUT)
     
-    var removeTaskCalled = false
+    var sut: ListTasksInteractor!
     
-    // Spied Methods
+    // MARK: - Test Lifecycle
     
-    override func removeTask(_ task: String, from taskList: [String]) -> [String] {
-      removeTaskCalled = true
-      return []
-    }
-  }
-  
-  class ListTasksPresentationLogicSpy: ListTasksPresentationLogic {
-    
-    // Expectations
-    
-    var presentFetchFromDataStoreResultCalled = false
-    var presentSelectTaskResultCalled = false
-    
-    // Spied Methods
-    
-    func presentFetchFromDataStoreResult(with response: ListTasksModels.FetchFromDataStore.Response) {
-      presentFetchFromDataStoreResultCalled = true
+    override func setUp() {
+        super.setUp()
+        setupListTasksInteractor()
     }
     
-    func presentSelectTaskResult(with response: ListTasksModels.SelectTask.Response) {
-      presentSelectTaskResultCalled = true
+    override func tearDown() {
+        super.tearDown()
     }
-  }
-  
-  // MARK: - Tests
-  
-  func testFetchFromDataStoreShouldAskPresenterToPresentFetchFromDataStoreResult() {
     
-    // Given
+    // MARK: - Test Setup
     
-    let request   = ListTasksModels.FetchFromDataStore.Request()
-    let spy       = ListTasksPresentationLogicSpy()
-    sut.presenter = spy
+    func setupListTasksInteractor() {
+        sut = ListTasksInteractor()
+    }
     
-    // When
+    // MARK: - Test Doubles
     
-    sut.fetchFromDataStore(with: request)
+    class ListTasksWorkerSpy: ListTasksWorker {
+        
+        // Expectations
+        
+        var removeTaskCalled = false
+        
+        // Spied Methods
+        
+        override func removeTask(_ task: String, from taskList: [String]) -> [String] {
+            removeTaskCalled = true
+            return []
+        }
+    }
     
-    // Then
+    class ListTasksPresentationLogicSpy: ListTasksPresentationLogic {
+        
+        // Expectations
+        
+        var presentFetchFromDataStoreResultCalled = false
+        var presentSelectTaskResultCalled = false
+        
+        // Spied Methods
+        
+        func presentFetchFromDataStoreResult(with response: ListTasksModels.FetchFromDataStore.Response) {
+            presentFetchFromDataStoreResultCalled = true
+        }
+        
+        func presentSelectTaskResult(with response: ListTasksModels.SelectTask.Response) {
+            presentSelectTaskResultCalled = true
+        }
+    }
     
-    XCTAssertTrue(spy.presentFetchFromDataStoreResultCalled, "fetchFromDataStore(with:) should ask the presenter to format the result")
-  }
-  
-  func testSelectTaskShouldNotCallWorkerAndPresenterIfRequestTaskAndTasksListIsNil() {
+    // MARK: - Tests
     
-    // Given
+    func testFetchFromDataStoreShouldAskPresenterToPresentFetchFromDataStoreResult() {
+        
+        // Given
+        
+        let request   = ListTasksModels.FetchFromDataStore.Request()
+        let spy       = ListTasksPresentationLogicSpy()
+        sut.presenter = spy
+        
+        // When
+        
+        sut.fetchFromDataStore(with: request)
+        
+        // Then
+        
+        XCTAssertTrue(spy.presentFetchFromDataStoreResultCalled, "fetchFromDataStore(with:) should ask the presenter to format the result")
+    }
     
-    let request      = ListTasksModels.SelectTask.Request()
-    let workerSpy    = ListTasksWorkerSpy()
-    let presenterSpy = ListTasksPresentationLogicSpy()
-    sut.worker       = workerSpy
-    sut.presenter    = presenterSpy
-    sut.tasks        = nil
+    func testSelectTaskShouldNotCallWorkerAndPresenterIfRequestTaskAndTasksListIsNil() {
+        
+        // Given
+        
+        let request      = ListTasksModels.SelectTask.Request()
+        let workerSpy    = ListTasksWorkerSpy()
+        let presenterSpy = ListTasksPresentationLogicSpy()
+        sut.worker       = workerSpy
+        sut.presenter    = presenterSpy
+        sut.tasks        = nil
+        
+        // When
+        
+        sut.selectTask(with: request)
+        
+        // Then
+        
+        XCTAssertFalse(workerSpy.removeTaskCalled, "selectTask(with:) should not be call ListTasksWorker when Request Task & Tasks is nil")
+        XCTAssertFalse(presenterSpy.presentSelectTaskResultCalled, "selectTask(with:) should not call ListTasksPresenter when Request Task & Tasks is nil")
+    }
     
-    // When
+    func testSelectTaskShouldAskWorkerToRemoveSelectedTaskIfRequestTaskAndTasksListIsNotNil() {
+        
+        // Given
+        
+        let request   = ListTasksModels.SelectTask.Request(task: Seeds.tasks.last)
+        let workerSpy = ListTasksWorkerSpy()
+        sut.worker    = workerSpy
+        sut.tasks     = Seeds.tasks
+        
+        // When
+        
+        sut.selectTask(with: request)
+        
+        // Then
+        
+        XCTAssertTrue(workerSpy.removeTaskCalled, "selectTask(with:) should call ListTasksWorker to remove selected task")
+    }
     
-    sut.selectTask(with: request)
-    
-    // Then
-    
-    XCTAssertFalse(workerSpy.removeTaskCalled, "selectTask(with:) should not be call ListTasksWorker when Request Task & Tasks is nil")
-    XCTAssertFalse(presenterSpy.presentSelectTaskResultCalled, "selectTask(with:) should not call ListTasksPresenter when Request Task & Tasks is nil")
-  }
-  
-  func testSelectTaskShouldAskWorkerToRemoveSelectedTaskIfRequestTaskAndTasksListIsNotNil() {
-    
-    // Given
-    
-    let request   = ListTasksModels.SelectTask.Request(task: Seeds.tasks.last)
-    let workerSpy = ListTasksWorkerSpy()
-    sut.worker    = workerSpy
-    sut.tasks     = Seeds.tasks
-    
-    // When
-    
-    sut.selectTask(with: request)
-    
-    // Then
-    
-    XCTAssertTrue(workerSpy.removeTaskCalled, "selectTask(with:) should call ListTasksWorker to remove selected task")
-  }
-  
-  func testSelectTaskShouldAskPresenterToPresentRemainingTasksIfRequestTaskAndTasksListIsNotNil() {
-    
-    // Given
-    
-    let request      = ListTasksModels.SelectTask.Request(task: Seeds.tasks.first)
-    let presenterSpy = ListTasksPresentationLogicSpy()
-    sut.presenter    = presenterSpy
-    sut.tasks        = Seeds.tasks
-    
-    // When
-    
-    sut.selectTask(with: request)
-    
-    // Then
-    
-    XCTAssertTrue(presenterSpy.presentSelectTaskResultCalled, "selectTask(with:) should call ListTasksPresenter to present remaining tasks")
-  }
+    func testSelectTaskShouldAskPresenterToPresentRemainingTasksIfRequestTaskAndTasksListIsNotNil() {
+        
+        // Given
+        
+        let request      = ListTasksModels.SelectTask.Request(task: Seeds.tasks.first)
+        let presenterSpy = ListTasksPresentationLogicSpy()
+        sut.presenter    = presenterSpy
+        sut.tasks        = Seeds.tasks
+        
+        // When
+        
+        sut.selectTask(with: request)
+        
+        // Then
+        
+        XCTAssertTrue(presenterSpy.presentSelectTaskResultCalled, "selectTask(with:) should call ListTasksPresenter to present remaining tasks")
+    }
 }

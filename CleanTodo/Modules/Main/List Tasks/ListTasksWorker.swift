@@ -13,11 +13,11 @@
 import UIKit
 
 class ListTasksWorker {
-  func removeTask(_ task: String, from taskList: [String]) -> [String] {
-    guard let index = taskList.index(of: task) else { return taskList }
-    
-    var tasks = taskList
-    tasks.remove(at: index)
-    return tasks
-  }
+    func removeTask(_ task: String, from taskList: [String]) -> [String] {
+        guard let index = taskList.index(of: task) else { return taskList }
+        
+        var tasks = taskList
+        tasks.remove(at: index)
+        return tasks
+    }
 }

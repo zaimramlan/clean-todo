@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1730BEBE72E645BCC027A840 /* Pods_CleanTodo_Tests_CleanTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1489FE703A77741C6D7F3E59 /* Pods_CleanTodo_Tests_CleanTodoTests.framework */; };
-		A41E3477204D8CB700B00357 /* CleanTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E3476204D8CB700B00357 /* CleanTodoTests.swift */; };
 		A45A2569204D93D4001DFC4A /* ListTasksInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */; };
 		A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */; };
 		A45A256B204D93D4001DFC4A /* ListTasksViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2567204D93D4001DFC4A /* ListTasksViewControllerTests.swift */; };
@@ -43,7 +42,6 @@
 		66C24D2F4A4EC81231B04A03 /* Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo-Tests-CleanTodoTests/Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A41E3476204D8CB700B00357 /* CleanTodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTodoTests.swift; sourceTree = "<group>"; };
 		A41E3478204D8CB700B00357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksInteractorTests.swift; sourceTree = "<group>"; };
 		A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenterTests.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			children = (
 				A41E347E204D8CDA00B00357 /* Main */,
 				A45A256F204DA7AF001DFC4A /* Seeds.swift */,
-				A41E3476204D8CB700B00357 /* CleanTodoTests.swift */,
 				A41E3478204D8CB700B00357 /* Info.plist */,
 			);
 			path = CleanTodoTests;
@@ -389,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A41E3477204D8CB700B00357 /* CleanTodoTests.swift in Sources */,
 				A45A256B204D93D4001DFC4A /* ListTasksViewControllerTests.swift in Sources */,
 				A45A2569204D93D4001DFC4A /* ListTasksInteractorTests.swift in Sources */,
 				A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */,
@@ -596,7 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Shared/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;
@@ -613,7 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT63RCWV2C;
-				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CleanTodo/Shared/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zaimramlan.CleanTodo;

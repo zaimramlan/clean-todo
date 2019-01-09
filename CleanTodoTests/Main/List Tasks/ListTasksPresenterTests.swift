@@ -14,82 +14,82 @@
 import XCTest
 
 class ListTasksPresenterTests: XCTestCase {
-  
-  // MARK: Subject Under Test (SUT)
-  
-  var sut: ListTasksPresenter!
-  
-  // MARK: Test Lifecycle
-  
-  override func setUp() {
-    super.setUp()
-    setupListTasksPresenter()
-  }
-  
-  override func tearDown() {
-    super.tearDown()
-  }
-  
-  // MARK: Test Setup
-  
-  func setupListTasksPresenter() {
-    sut = ListTasksPresenter()
-  }
-  
-  // MARK: Test Doubles
-  
-  class ListTasksDisplayLogicSpy: ListTasksDisplayLogic {
     
-    // Expectations
+    // MARK: Subject Under Test (SUT)
     
-    var displayFetchFromDataStoreResultCalled = false
-    var displaySelectTaskResultCalled = false
+    var sut: ListTasksPresenter!
     
-    // Spied Methods
+    // MARK: Test Lifecycle
     
-    func displayFetchFromDataStoreResult(with viewModel: ListTasksModels.FetchFromDataStore.ViewModel) {
-      displayFetchFromDataStoreResultCalled = true
+    override func setUp() {
+        super.setUp()
+        setupListTasksPresenter()
     }
     
-    func displaySelectTaskResult(with viewModel: ListTasksModels.SelectTask.ViewModel) {
-      displaySelectTaskResultCalled = true
+    override func tearDown() {
+        super.tearDown()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testFetchFromDataStoreShouldFormatFetchFetchedDataForDisplay() {
     
-    // Given
+    // MARK: Test Setup
     
-    let spy = ListTasksDisplayLogicSpy()
-    sut.viewController = spy
-    let response = ListTasksModels.FetchFromDataStore.Response(tasks: [])
+    func setupListTasksPresenter() {
+        sut = ListTasksPresenter()
+    }
     
-    // When
+    // MARK: Test Doubles
     
-    sut.presentFetchFromDataStoreResult(with: response)
+    class ListTasksDisplayLogicSpy: ListTasksDisplayLogic {
+        
+        // Expectations
+        
+        var displayFetchFromDataStoreResultCalled = false
+        var displaySelectTaskResultCalled = false
+        
+        // Spied Methods
+        
+        func displayFetchFromDataStoreResult(with viewModel: ListTasksModels.FetchFromDataStore.ViewModel) {
+            displayFetchFromDataStoreResultCalled = true
+        }
+        
+        func displaySelectTaskResult(with viewModel: ListTasksModels.SelectTask.ViewModel) {
+            displaySelectTaskResultCalled = true
+        }
+    }
     
-    // Then
+    // MARK: Tests
     
-    XCTAssertTrue(spy.displayFetchFromDataStoreResultCalled, "presentFetchFromDataStoreResult(with:) should ask the view controller to display the result")
-  }
-  
-  func testListTasks() {
+    func testFetchFromDataStoreShouldFormatFetchFetchedDataForDisplay() {
+        
+        // Given
+        
+        let spy = ListTasksDisplayLogicSpy()
+        sut.viewController = spy
+        let response = ListTasksModels.FetchFromDataStore.Response(tasks: [])
+        
+        // When
+        
+        sut.presentFetchFromDataStoreResult(with: response)
+        
+        // Then
+        
+        XCTAssertTrue(spy.displayFetchFromDataStoreResultCalled, "presentFetchFromDataStoreResult(with:) should ask the view controller to display the result")
+    }
     
-    // Given
-    
-    let spy = ListTasksDisplayLogicSpy()
-    sut.viewController = spy
-    let response = ListTasksModels.SelectTask.Response(tasks: [])
-    
-    // When
-    
-    sut.presentSelectTaskResult(with: response)
-    
-    // Then
-    
-    XCTAssertTrue(spy.displaySelectTaskResultCalled, "presentListTasksResult(with:) should ask the view controller to display the result")
-  }
+    func testListTasks() {
+        
+        // Given
+        
+        let spy = ListTasksDisplayLogicSpy()
+        sut.viewController = spy
+        let response = ListTasksModels.SelectTask.Response(tasks: [])
+        
+        // When
+        
+        sut.presentSelectTaskResult(with: response)
+        
+        // Then
+        
+        XCTAssertTrue(spy.displaySelectTaskResultCalled, "presentListTasksResult(with:) should ask the view controller to display the result")
+    }
 }
 
