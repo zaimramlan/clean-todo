@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1730BEBE72E645BCC027A840 /* Pods_CleanTodo_Tests_CleanTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1489FE703A77741C6D7F3E59 /* Pods_CleanTodo_Tests_CleanTodoTests.framework */; };
 		A41E3477204D8CB700B00357 /* CleanTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E3476204D8CB700B00357 /* CleanTodoTests.swift */; };
 		A45A2569204D93D4001DFC4A /* ListTasksInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2565204D93D4001DFC4A /* ListTasksInteractorTests.swift */; };
 		A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */; };
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1489FE703A77741C6D7F3E59 /* Pods_CleanTodo_Tests_CleanTodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanTodo_Tests_CleanTodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F44817F36D05B65F193D19E /* Pods-CleanTodo-Tests-CleanTodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo-Tests-CleanTodoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo-Tests-CleanTodoTests/Pods-CleanTodo-Tests-CleanTodoTests.release.xcconfig"; sourceTree = "<group>"; };
+		66C24D2F4A4EC81231B04A03 /* Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanTodo-Tests-CleanTodoTests/Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41E3476204D8CB700B00357 /* CleanTodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTodoTests.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1730BEBE72E645BCC027A840 /* Pods_CleanTodo_Tests_CleanTodoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				6C1A5016423711E93F4DFE78 /* Pods_CleanTodo.framework */,
+				1489FE703A77741C6D7F3E59 /* Pods_CleanTodo_Tests_CleanTodoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 			children = (
 				F470A65931C94DA51CD9AFD2 /* Pods-CleanTodo.debug.xcconfig */,
 				DF0AFCD8989352140EF28628 /* Pods-CleanTodo.release.xcconfig */,
+				66C24D2F4A4EC81231B04A03 /* Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig */,
+				1F44817F36D05B65F193D19E /* Pods-CleanTodo-Tests-CleanTodoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -213,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A41E347B204D8CB700B00357 /* Build configuration list for PBXNativeTarget "CleanTodoTests" */;
 			buildPhases = (
+				3A04FBA3CF6F388C42F9B8F4 /* [CP] Check Pods Manifest.lock */,
 				A41E3470204D8CB700B00357 /* Sources */,
 				A41E3471204D8CB700B00357 /* Frameworks */,
 				A41E3472204D8CB700B00357 /* Resources */,
+				91554C682E63A58F50E5D1B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,8 +245,6 @@
 				A4D6DB7F204D6B6D00B6D188 /* Sources */,
 				A4D6DB80204D6B6D00B6D188 /* Frameworks */,
 				A4D6DB81204D6B6D00B6D188 /* Resources */,
-				0941D883637482409B7E4569 /* [CP] Embed Pods Frameworks */,
-				4F847A4058A322CE230BC0E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,34 +318,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0941D883637482409B7E4569 /* [CP] Embed Pods Frameworks */ = {
+		3A04FBA3CF6F388C42F9B8F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CleanTodo-Tests-CleanTodoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F847A4058A322CE230BC0E2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanTodo/Pods-CleanTodo-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		617CCC06FE508F728C763B35 /* [CP] Check Pods Manifest.lock */ = {
@@ -356,6 +356,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91554C682E63A58F50E5D1B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CleanTodo-Tests-CleanTodoTests/Pods-CleanTodo-Tests-CleanTodoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CleanTodo-Tests-CleanTodoTests/Pods-CleanTodo-Tests-CleanTodoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -420,6 +444,7 @@
 /* Begin XCBuildConfiguration section */
 		A41E347C204D8CB700B00357 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66C24D2F4A4EC81231B04A03 /* Pods-CleanTodo-Tests-CleanTodoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -437,6 +462,7 @@
 		};
 		A41E347D204D8CB700B00357 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F44817F36D05B65F193D19E /* Pods-CleanTodo-Tests-CleanTodoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
