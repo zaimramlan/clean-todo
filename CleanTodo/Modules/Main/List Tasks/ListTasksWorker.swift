@@ -13,6 +13,10 @@
 import UIKit
 
 class ListTasksWorker {
+    func fetchFromDataStore() -> [String] {
+        return ["Task 1", "Task 2"]
+    }
+    
     func removeTask(_ task: String, from taskList: [String]) -> [String] {
         guard let index = taskList.index(of: task) else { return taskList }
         

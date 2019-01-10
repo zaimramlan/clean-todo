@@ -29,7 +29,7 @@ class ListTasksInteractor: ListTasksBusinessLogic, ListTasksDataStore {
     // MARK: Fetch Data From DataStore
     
     func fetchFromDataStore(with request: ListTasksModels.FetchFromDataStore.Request) {
-        tasks = ["Task 1", "Task 2"]
+        tasks = worker?.fetchFromDataStore()
         let response = ListTasksModels.FetchFromDataStore.Response(tasks: tasks!)
         presenter?.presentFetchFromDataStoreResult(with: response)
     }
