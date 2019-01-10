@@ -10,141 +10,171 @@
 //  see http://clean-swift.com
 //
 
+import Quick
+import Nimble
 @testable import CleanTodo
-import XCTest
 
-class ListTasksViewControllerTests: XCTestCase {
-    
-    // MARK: Subject Under Test (SUT)
-    
-    var sut: ListTasksViewController!
-    var window: UIWindow!
-    
-    // MARK: Test Lifecycle
-    
-    override func setUp() {
-        super.setUp()
-        window = UIWindow()
-        setupListTasksViewController()
-    }
-    
-    override func tearDown() {
-        window = nil
-        super.tearDown()
-    }
-    
-    // MARK: Test Setup
-    
-    func setupListTasksViewController() {
-        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        sut = storyboard.instantiateViewController(withIdentifier: "ListTasksViewController") as? ListTasksViewController
-    }
-    
-    func loadView() {
-        window.addSubview(sut.view)
-        RunLoop.current.run(until: Date())
-    }
-    
-    // MARK: Test Doubles
-    
-    class ListTasksBusinessLogicSpy: ListTasksBusinessLogic {
-        var fetchFromDataStoreCalled = false
-        var SelectTaskCalled = false
+class ListTasksViewControllerSpec: QuickSpec {
+    override func spec() {
         
-        func fetchFromDataStore(with request: ListTasksModels.FetchFromDataStore.Request) {
-            fetchFromDataStoreCalled = true
+        // MARK: - Subject Under Test (SUT)
+        
+        var sut: ListTasksViewController!
+        var window: UIWindow!
+        
+        // MARK: - Test Doubles
+        
+        var interactorSpy: ListTasksBusinessLogicSpy!
+        class ListTasksBusinessLogicSpy: ListTasksBusinessLogic {
+            var fetchFromDataStoreCalled = false
+            func fetchFromDataStore(with request: ListTasksModels.FetchFromDataStore.Request) {
+                fetchFromDataStoreCalled = true
+            }
+            
+            var selectTaskCalled = false
+            func selectTask(with request: ListTasksModels.SelectTask.Request) {
+                selectTaskCalled = true
+            }
         }
         
-        func selectTask(with request: ListTasksModels.SelectTask.Request) {
-            SelectTaskCalled = true
+        class TableViewSpy: UITableView {
+            var reloadDataCalled = false
+            
+            override func reloadData() {
+                reloadDataCalled = true
+            }
         }
-    }
-    
-    class TableViewSpy: UITableView {
-        var reloadDataCalled = false
         
-        override func reloadData() {
-            reloadDataCalled = true
+        // MARK: - Test Setup Helpers
+        
+        func setupListTasksViewController() {
+            let bundle = Bundle.main
+            let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+            sut = storyboard.instantiateViewController(withIdentifier: "ListTasksViewController") as? ListTasksViewController
         }
-    }
-    
-    // MARK: Tests
-    
-    func testShouldFetchFromDataStoreWhenViewIsLoaded() {
         
-        // Given
-        let spy        = ListTasksBusinessLogicSpy()
-        sut.interactor = spy
+        func setupInteractorSpy() {
+            interactorSpy = ListTasksBusinessLogicSpy()
+            sut.interactor = interactorSpy
+        }
         
-        // When
-        loadView()
+        func loadView() {
+            window.addSubview(sut.view)
+            RunLoop.current.run(until: Date())
+        }
         
-        // Then
-        XCTAssertTrue(spy.fetchFromDataStoreCalled, "viewDidLoad() should ask the interactor to fetch from DataStore")
-    }
-    
-    func testDisplayFetchFromDataStoreResult() {
+        // MARK: - Tests
         
-        // Given
-        let viewModel = ListTasksModels.FetchFromDataStore.ViewModel(tasks: Seeds.tasks)
-        let spy       = TableViewSpy()
+        beforeEach {
+            window = UIWindow()
+            setupListTasksViewController()
+            setupInteractorSpy()
+        }
         
-        // When
-        loadView()
-        sut.listTaskTV = spy
-        sut.displayFetchFromDataStoreResult(with: viewModel)
+        afterEach {
+            window = nil
+        }
+
+        describe("view") {
+            context("did load", closure: {
+                it("should fetch from data store", closure: {
+                    loadView()
+                    expect(interactorSpy.fetchFromDataStoreCalled).to(beTrue())
+                })
+                
+                it("should display fetch from data store", closure: {
+                    let viewModel = ListTasksModels.FetchFromDataStore.ViewModel(tasks: Seeds.tasks)
+                    let spy = TableViewSpy()
+                    
+                    loadView()
+                    sut.listTaskTV = spy
+                    sut.displayFetchFromDataStoreResult(with: viewModel)
+                    
+                    expect(sut.tasks!).to(equal(Seeds.tasks))
+                    expect(sut.taskCountLabel.text!).to(equal("\(Seeds.tasks.count)"))
+                    expect(spy.reloadDataCalled).to(beTrue())
+                })
+            })
+        }
         
-        // Then
-        XCTAssertEqual(sut.tasks!, Seeds.tasks, "displayFetchFromDataStoreResult(with:) should update the list of tasks")
-        XCTAssertEqual(sut.taskCountLabel!.text!, "\(Seeds.tasks.count)", "displayFetchFromDataStoreResult(with:) should update taskCountLabel's text")
-        XCTAssertTrue(spy.reloadDataCalled, "displayFetchFromDataStoreResult(with:) should reload listTasksTV")
-    }
-    
-    func testNumberOfRowsInAnySectionShouldEqualToNumberOfTasks() {
+        describe("table view") {
+            context("did select row", closure: {
+                it("should select task", closure: {
+                    sut.tasks = Seeds.tasks
+                    
+                    loadView()
+                    let tableView = sut.listTaskTV
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    sut.tableView(tableView!, didSelectRowAt: indexPath)
+                    
+                    expect(interactorSpy.selectTaskCalled).to(beTrue())
+                })
+                
+                it("should display select task") {
+                    let viewModel = ListTasksModels.SelectTask.ViewModel(tasks: Seeds.tasks)
+                    let spy = TableViewSpy()
+                    
+                    loadView()
+                    sut.listTaskTV = spy
+                    sut.displaySelectTaskResult(with: viewModel)
+                    
+                    expect(sut.tasks!).to(equal(Seeds.tasks))
+                    expect(sut.taskCountLabel.text!).to(equal("\(Seeds.tasks.count)"))
+                    expect(spy.reloadDataCalled).to(beTrue())
+                }
+            })
+            
+            context("rows in a section", closure: {
+                context("with initialised tasks", closure: {
+                    it("should be the same as the number of tasks", closure: {
+                        sut.tasks = Seeds.tasks
+                        
+                        loadView()
+                        let indexPath = IndexPath(row: 0, section: 0)
+                        let rows = sut.tableView(sut.listTaskTV!, numberOfRowsInSection: indexPath.row)
+                        
+                        expect(rows).to(equal(Seeds.tasks.count))
+                    })
+                })
+                
+                context("without initialised tasks", closure: {
+                    it("should be 0", closure: {
+                        loadView()
+                        let indexPath = IndexPath(row: 0, section: 0)
+                        let rows = sut.tableView(sut.listTaskTV!, numberOfRowsInSection: indexPath.row)
+                        
+                        expect(rows).to(equal(0))
+                    })
+                })
+            })
+        }
         
-        // Given
-        sut.tasks = Seeds.tasks
-        
-        // When
-        loadView()
-        let tableView    = sut.listTaskTV
-        let numberOfRows = sut.tableView(tableView!, numberOfRowsInSection: 0)
-        
-        // Then
-        XCTAssertEqual(numberOfRows, sut.tasks!.count, "The number of TableView rows should equal to the number of tasks in the list")
-    }
-    
-    func testShouldAskInteractorToSelectTaskWhenTaskIsSelectedFromTableView() {
-        
-        // Given
-        let spy        = ListTasksBusinessLogicSpy()
-        sut.interactor = spy
-        sut.tasks      = Seeds.tasks
-        
-        // When
-        loadView()
-        let tableView = sut.listTaskTV
-        let indexPath = IndexPath(row: 0, section: 0)
-        sut.tableView(tableView!, didSelectRowAt: indexPath)
-        
-        // Then
-        XCTAssertTrue(spy.SelectTaskCalled, "tableView(_,didSelectRowAt:) should ask interactor to select the task at the given row")
-    }
-    
-    func testShouldConfigureTableViewCellToDisplayTask() {
-        
-        // Given
-        sut.tasks = Seeds.tasks
-        
-        // When
-        loadView()
-        let tableView = sut.listTaskTV
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell      = sut.tableView(tableView!, cellForRowAt: indexPath) as! ListTasksTableViewCell
-        
-        // Then
-        XCTAssertEqual(cell.taskLabel!.text!, Seeds.tasks.first!, "A properly configured TableViewCell should display the task")
+        describe("table view cell") {
+            context("with initialised tasks and row is within tasks' count", closure: {
+                it("should be a ListTasksTableViewCell", closure: {
+                    sut.tasks = Seeds.tasks
+
+                    loadView()
+                    let tableView = sut.listTaskTV
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    let cell = sut.tableView(tableView!, cellForRowAt: indexPath) as! ListTasksTableViewCell
+                    
+                    expect(cell).notTo(beNil())
+                    expect(cell.taskLabel.text!).to(equal(Seeds.tasks.first!))
+                })
+            })
+            
+            context("without initialised tasks and cell row is out of tasks' count", closure: {
+                it("should not be a ListTasksTableViewCell", closure: {
+                    loadView()
+                    
+                    let tableView = sut.listTaskTV
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    let cell = sut.tableView(tableView!, cellForRowAt: indexPath) as? ListTasksTableViewCell
+
+                    expect(cell).to(beNil())
+                })
+            })
+        }
     }
 }
-
