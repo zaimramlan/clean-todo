@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1730BEBE72E645BCC027A840 /* Pods_CleanTodo_Tests_CleanTodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1489FE703A77741C6D7F3E59 /* Pods_CleanTodo_Tests_CleanTodoTests.framework */; };
 		A45A2569204D93D4001DFC4A /* ListTasksInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2565204D93D4001DFC4A /* ListTasksInteractorSpec.swift */; };
-		A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */; };
+		A45A256A204D93D4001DFC4A /* ListTasksPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2566204D93D4001DFC4A /* ListTasksPresenterSpec.swift */; };
 		A45A256B204D93D4001DFC4A /* ListTasksViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */; };
 		A45A256E204DA193001DFC4A /* ListTasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256D204DA193001DFC4A /* ListTasksWorker.swift */; };
 		A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256F204DA7AF001DFC4A /* Seeds.swift */; };
@@ -44,7 +44,7 @@
 		A41E3474204D8CB700B00357 /* CleanTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A41E3478204D8CB700B00357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A45A2565204D93D4001DFC4A /* ListTasksInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksInteractorSpec.swift; sourceTree = "<group>"; };
-		A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenterTests.swift; sourceTree = "<group>"; };
+		A45A2566204D93D4001DFC4A /* ListTasksPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksPresenterSpec.swift; sourceTree = "<group>"; };
 		A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksViewControllerSpec.swift; sourceTree = "<group>"; };
 		A45A256D204DA193001DFC4A /* ListTasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksWorker.swift; sourceTree = "<group>"; };
 		A45A256F204DA7AF001DFC4A /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A45A2565204D93D4001DFC4A /* ListTasksInteractorSpec.swift */,
-				A45A2566204D93D4001DFC4A /* ListTasksPresenterTests.swift */,
+				A45A2566204D93D4001DFC4A /* ListTasksPresenterSpec.swift */,
 				A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */,
 			);
 			path = "List Tasks";
@@ -388,7 +388,7 @@
 			files = (
 				A45A256B204D93D4001DFC4A /* ListTasksViewControllerSpec.swift in Sources */,
 				A45A2569204D93D4001DFC4A /* ListTasksInteractorSpec.swift in Sources */,
-				A45A256A204D93D4001DFC4A /* ListTasksPresenterTests.swift in Sources */,
+				A45A256A204D93D4001DFC4A /* ListTasksPresenterSpec.swift in Sources */,
 				A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

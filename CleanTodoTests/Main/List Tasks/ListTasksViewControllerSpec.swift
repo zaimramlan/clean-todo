@@ -47,7 +47,7 @@ class ListTasksViewControllerSpec: QuickSpec {
         
         // MARK: - Test Setup
         
-        func setupListTasksViewController() {
+        func setupViewController() {
             let bundle = Bundle.main
             let storyboard = UIStoryboard(name: "Main", bundle: bundle)
             sut = storyboard.instantiateViewController(withIdentifier: "ListTasksViewController") as? ListTasksViewController
@@ -67,7 +67,7 @@ class ListTasksViewControllerSpec: QuickSpec {
         
         beforeEach {
             window = UIWindow()
-            setupListTasksViewController()
+            setupViewController()
             setupInteractorSpy()
         }
         

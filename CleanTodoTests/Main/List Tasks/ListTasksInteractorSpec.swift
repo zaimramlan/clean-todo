@@ -53,16 +53,16 @@ class ListTasksInteractorSpec: QuickSpec {
 
         // MARK: - Test Setup Helpers
         
-        func setupListTasksInteractor() {
+        func setupInteractor() {
             sut = ListTasksInteractor()
         }
         
-        func setupListTasksWorkerSpy() {
+        func setupWorkerSpy() {
             workerSpy = ListTasksWorkerSpy()
             sut.worker = workerSpy
         }
         
-        func setupListTasksPresenterSpy() {
+        func setupPresenterSpy() {
             presenterSpy = ListTasksPresentationLogicSpy()
             sut.presenter = presenterSpy
         }
@@ -70,9 +70,9 @@ class ListTasksInteractorSpec: QuickSpec {
         // MARK: - Tests
         
         beforeEach {
-            setupListTasksInteractor()
-            setupListTasksWorkerSpy()
-            setupListTasksPresenterSpy()
+            setupInteractor()
+            setupWorkerSpy()
+            setupPresenterSpy()
         }
         
         describe("fetchFromDataStore") {
