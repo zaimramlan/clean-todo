@@ -54,7 +54,7 @@ class ListTasksPresenterSpec: QuickSpec {
             setupViewControllerSpy()
         }
         
-        describe("presentFetchFromDataStoreResult") {
+        describe("present fetch from data store") {
             it("should ask view controller to display the result", closure: {
                 let response = ListTasksModels.FetchFromDataStore.Response(tasks: Seeds.tasks)
                 sut.presentFetchFromDataStoreResult(with: response)
@@ -62,7 +62,7 @@ class ListTasksPresenterSpec: QuickSpec {
             })
         }
         
-        describe("presentSelectTaskResult") {
+        describe("present select task") {
             it("should ask view controller to display the select task result", closure: {
                 let response = ListTasksModels.SelectTask.Response(tasks: Seeds.tasks)
                 sut.presentSelectTaskResult(with: response)

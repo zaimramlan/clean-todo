@@ -75,7 +75,7 @@ class ListTasksInteractorSpec: QuickSpec {
             setupPresenterSpy()
         }
         
-        describe("fetchFromDataStore") {
+        describe("fetch from data store") {
             beforeEach {
                 let request = ListTasksModels.FetchFromDataStore.Request()
                 sut.fetchFromDataStore(with: request)
@@ -90,7 +90,7 @@ class ListTasksInteractorSpec: QuickSpec {
             })
         }
         
-        describe("selectTask") {
+        describe("select task") {
             context("with a selected task and tasks initialised", closure: {
                 beforeEach {
                     sut.tasks = Seeds.tasks

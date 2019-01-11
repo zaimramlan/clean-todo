@@ -60,15 +60,11 @@ class ListTasksViewController: UIViewController, ListTasksDisplayLogic {
         setupFetchFromDataStore()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     // MARK: TableView
     
     @IBOutlet var listTaskTV: UITableView!
     func setupTableView() {
-        listTaskTV.delegate   = self
+        listTaskTV.delegate = self
         listTaskTV.dataSource = self
         listTaskTV.tableFooterView = UIView()
     }

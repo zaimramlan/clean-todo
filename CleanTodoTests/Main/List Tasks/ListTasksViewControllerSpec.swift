@@ -76,9 +76,15 @@ class ListTasksViewControllerSpec: QuickSpec {
         }
 
         describe("view") {
+            beforeEach { loadView() }
+            
             context("did load", closure: {
+                it("should setup table view", closure: {
+                    expect(sut.listTaskTV.delegate).to(beAnInstanceOf(ListTasksViewController.self))
+                    expect(sut.listTaskTV.dataSource).to(beAnInstanceOf(ListTasksViewController.self))
+                })
+                
                 it("should fetch from data store", closure: {
-                    loadView()
                     expect(interactorSpy.fetchFromDataStoreCalled).to(beTrue())
                 })
                 
@@ -86,7 +92,6 @@ class ListTasksViewControllerSpec: QuickSpec {
                     let viewModel = ListTasksModels.FetchFromDataStore.ViewModel(tasks: Seeds.tasks)
                     let spy = TableViewSpy()
                     
-                    loadView()
                     sut.listTaskTV = spy
                     sut.displayFetchFromDataStoreResult(with: viewModel)
                     
@@ -124,7 +129,7 @@ class ListTasksViewControllerSpec: QuickSpec {
                 }
             })
             
-            context("rows in a section", closure: {
+            context("number of rows in a section", closure: {
                 context("with initialised tasks", closure: {
                     it("should be the same as the number of tasks", closure: {
                         sut.tasks = Seeds.tasks

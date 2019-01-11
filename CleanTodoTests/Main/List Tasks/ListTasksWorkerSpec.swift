@@ -31,7 +31,7 @@ class ListTasksWorkerSpec: QuickSpec {
             setupWorker()
         }
         
-        describe("fetchFromDataStore") {
+        describe("fetch from data store") {
             it("should return an array of string", closure: {
                 let tasks = sut.fetchFromDataStore()
                 expect(tasks).to(beAnInstanceOf(Array<String>.self))
@@ -39,7 +39,7 @@ class ListTasksWorkerSpec: QuickSpec {
             })
         }
         
-        describe("removeTask") {
+        describe("remove task") {
             context("task to remove is in the task list", closure: {
                 it("should remove the task and return the remaining tasks", closure: {
                     let taskToRemove = Seeds.tasks.first!
