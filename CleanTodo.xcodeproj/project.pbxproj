@@ -13,6 +13,7 @@
 		A45A256B204D93D4001DFC4A /* ListTasksViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */; };
 		A45A256E204DA193001DFC4A /* ListTasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256D204DA193001DFC4A /* ListTasksWorker.swift */; };
 		A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A256F204DA7AF001DFC4A /* Seeds.swift */; };
+		A4B5FBCB21E8CB7A0090DFD9 /* ListTasksWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B5FBCA21E8CB790090DFD9 /* ListTasksWorkerSpec.swift */; };
 		A4D6DB87204D6B6D00B6D188 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */; };
 		A4D6DB8C204D6B6E00B6D188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8A204D6B6E00B6D188 /* Main.storyboard */; };
 		A4D6DB8E204D6B6E00B6D188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D6DB8D204D6B6E00B6D188 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksViewControllerSpec.swift; sourceTree = "<group>"; };
 		A45A256D204DA193001DFC4A /* ListTasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksWorker.swift; sourceTree = "<group>"; };
 		A45A256F204DA7AF001DFC4A /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		A4B5FBCA21E8CB790090DFD9 /* ListTasksWorkerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTasksWorkerSpec.swift; sourceTree = "<group>"; };
 		A4D6DB83204D6B6D00B6D188 /* CleanTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D6DB86204D6B6D00B6D188 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D6DB8B204D6B6E00B6D188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A45A2565204D93D4001DFC4A /* ListTasksInteractorSpec.swift */,
 				A45A2566204D93D4001DFC4A /* ListTasksPresenterSpec.swift */,
 				A45A2567204D93D4001DFC4A /* ListTasksViewControllerSpec.swift */,
+				A4B5FBCA21E8CB790090DFD9 /* ListTasksWorkerSpec.swift */,
 			);
 			path = "List Tasks";
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			files = (
 				A45A256B204D93D4001DFC4A /* ListTasksViewControllerSpec.swift in Sources */,
 				A45A2569204D93D4001DFC4A /* ListTasksInteractorSpec.swift in Sources */,
+				A4B5FBCB21E8CB7A0090DFD9 /* ListTasksWorkerSpec.swift in Sources */,
 				A45A256A204D93D4001DFC4A /* ListTasksPresenterSpec.swift in Sources */,
 				A45A2570204DA7AF001DFC4A /* Seeds.swift in Sources */,
 			);
