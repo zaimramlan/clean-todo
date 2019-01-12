@@ -13,35 +13,35 @@
 import UIKit
 
 enum ListTasksModels {
-
-  // MARK: Data Store Fetch
-  
-  enum FetchFromDataStore {
-    struct Request {
+    
+    // MARK: Data Store Fetch
+    
+    enum FetchFromDataStore {
+        struct Request {
+        }
+        
+        struct Response {
+            var tasks: [String]
+        }
+        
+        struct ViewModel {
+            var tasks: [String]
+        }
     }
     
-    struct Response {
-      var tasks: [String]
-    }
+    // MARK: Use Cases
     
-    struct ViewModel {
-      var tasks: [String]
+    enum SelectTask {
+        struct Request {
+            var task: String?
+        }
+        
+        struct Response {
+            var tasks: [String]
+        }
+        
+        struct ViewModel {
+            var tasks: [String]
+        }
     }
-  }
-  
-  // MARK: Use Cases
-  
-  enum SelectTask {
-    struct Request {
-      var task: String?
-    }
-
-    struct Response {
-      var tasks: [String]
-    }
-
-    struct ViewModel {
-      var tasks: [String]
-    }
-  }
 }
