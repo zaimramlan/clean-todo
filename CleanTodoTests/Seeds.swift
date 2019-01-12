@@ -9,5 +9,5 @@
 import Foundation
 
 struct Seeds {
-  static let tasks = ["Task 1", "Task 2"]
+    static let tasks = ["Task 1", "Task 2"]
 }
