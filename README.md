@@ -1,8 +1,8 @@
 # CleanTodo
 
-[![IDE](https://img.shields.io/badge/Xcode-9-blue.svg)](https://developer.apple.com/xcode/)
-[![Platform](https://img.shields.io/badge/platform-iOS%2011-green.svg)](https://developer.apple.com/ios/)
-[![Language](https://img.shields.io/badge/swift-3-orange.svg)](https://swift.org)
+[![IDE](https://img.shields.io/badge/Xcode-10-blue.svg)](https://developer.apple.com/xcode/)
+[![Platform](https://img.shields.io/badge/platform-iOS%2012-green.svg)](https://developer.apple.com/ios/)
+[![Language](https://img.shields.io/badge/swift-4-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 CleanTodo is a sample iOS app built using the Clean Swift architecture, by implementing a Todo-List app. Clean Swift is Uncle Bob's Clean Architecture applied to iOS and Mac projects.
